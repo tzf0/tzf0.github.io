@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>HeatDeath</title>
+    <title>通讯录管理系统 | HeatDeath</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,15 +51,14 @@
 </div>
 
   <div id='main-part'>
-      
-    <div class="main">
+      <div class="main">
 <div class="blog-post">
     <!-- Title -->
-    
-      <h1 class="blog-post-title">
-        <a href="/2023/04/15/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">通讯录管理系统</a>
-      </h1>
-    
+    <h1 class="blog-post-title">
+        <a href="/2023/04/15/通讯录管理系统/">
+            通讯录管理系统
+        </a>
+    </h1>
     <!-- Date and Author -->
     <p class="blog-post-meta">
         2023-04-15
@@ -285,137 +284,43 @@ while (true) &#123;
 </code></pre>
 <p>}</p>
 
-    <!-- Only display the Read More link if we are displaying an excerpt -->
+
+    <!-- Social share choices -->
     
+  <div id="social-share">
+    <a data-url="http://example.com/2023/04/15/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener" href="https://plus.google.com/share?url=" class="googleplus"><img src="/image/googleplusicon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/15/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=" class="twitter"><img src="/image/twittericon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/15/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener" href="http://pinterest.com/pin/create/button/?url=" class="pinterest"><img src="/image/pinteresticon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/15/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook"><img src="/image/facebookicon.png" alt=""/></a>
+  </div>
+
+
+
+
+
+<!--
+
+
+https://www.facebook.com/sharer/sharer.php?u=http://example.com/2023/04/15/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/
+http://example.com/2023/04/15/%25E9%2580%259A%25E8%25AE%25AF%25E5%25BD%2595%25E7%25AE%25A1%25E7%2590%2586%25E7%25B3%25BB%25E7%25BB%259F/
+-->
+
+
 
     <hr />
 
+
+    <!-- Tags and Categories links -->
     
 
     
 
 
+    <!-- Comment using disqus -->
+    
 
 </div>
 </div>
-
-
-    <div class="main">
-<div class="blog-post">
-    <!-- Title -->
-    
-      <h1 class="blog-post-title">
-        <a href="/2023/04/13/%E6%8C%87%E9%92%88/">指针</a>
-      </h1>
-    
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2023-04-13
-        
-    </p>
-
-    
-
-    <!-- Content -->
-    <h2 id="解引用"><a href="#解引用" class="headerlink" title="解引用"></a>解引用</h2><p>可以通过解引用的方式来找到指针指向的内存</p>
-<p>指针前面加 * 代表解引用，找到指针指向的内存中的数据</p>
-<p><code>cout &lt;&lt; &quot;a的地址为：&quot; &lt;&lt; &amp;a &lt;&lt; endl; cout &lt;&lt; &quot;*p的值为：&quot; &lt;&lt; *p &lt;&lt; endl;</code></p>
-<p><strong>a的地址为：10</strong><br>*<strong>p的值为：10</strong></p>
-<h2 id="指针所占的内存空间"><a href="#指针所占的内存空间" class="headerlink" title="指针所占的内存空间"></a>指针所占的内存空间</h2><p>在32位操作系统下，占4个字节</p>
-<p>在64位操作系统下，占8个字节</p>
-<p><code>int a = 10;     int* p = &amp;a;</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;sizeof (int*) = &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(<span class="type">int</span>*) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;sizeof (int*) = &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(p) &lt;&lt; endl;`</span><br></pre></td></tr></table></figure>
-
-<p><em><em>sizeof (int</em>) &#x3D; 8<br>sizeof (int</em>) &#x3D; 8**</p>
-<h2 id="空指针"><a href="#空指针" class="headerlink" title="空指针"></a>空指针</h2><p>空指针用于给指针变量初始化</p>
-<p>空指针不可以访问</p>
-<p>空指针指向内存为0的空间</p>
-<p>0~255之间的内存编号是系统占用，不可以访问</p>
-<p><code>int* p = NULL; cout &lt;&lt; *p &lt;&lt; endl;</code></p>
-<p><strong>(进程 25944)已退出，代码为 -1073741819。</strong></p>
-<h2 id="野指针"><a href="#野指针" class="headerlink" title="野指针"></a>野指针</h2><p>指针变量指向非法的内存空间</p>
-<p><code>int* p = (int*)0x1100; cout &lt;&lt; *p &lt;&lt; endl;</code></p>
-<p><strong>(进程 3160)已退出，代码为 -1073741819。</strong></p>
-<h2 id="const-修饰指针"><a href="#const-修饰指针" class="headerlink" title="const 修饰指针"></a>const 修饰指针</h2><p>1.const修饰指针 ——常量指针</p>
-<p>​	指针的指向可以修改，但是指针的值不可以改</p>
-<p>​	<code>int a = 10;</code></p>
-<p>​	<code>int b = 10;</code></p>
-<p>​	<code>const int* p = &amp;a;</code></p>
-<p>​	<code>p = &amp;b;</code></p>
-<p>2.const修饰常量 ——指针常量</p>
-<p>​	指针的指向不可以修改，但是指针的值可以改</p>
-<p>​	<code>int a = 10;</code></p>
-<p>​	<code>int b = 10;</code></p>
-<p>​	<code>int* const p = &amp;a;</code></p>
-<p>​	<code>p = 20;</code></p>
-<p>3.const即修饰指针，又修饰常量</p>
-<p>​	指针的指向和指针指向的值都不能改</p>
-<p>​	<code>int a = 10;</code></p>
-<p>​	<code>int b = 10;</code></p>
-<p>​	<code>const int* const p = &amp;a;</code></p>
-<p>​	<code>p = 20;</code></p>
-
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-
-    <hr />
-
-    
-
-    
-
-
-
-</div>
-</div>
-
-
-    <div class="main">
-<div class="blog-post">
-    <!-- Title -->
-    
-      <h1 class="blog-post-title">
-        <a href="/2023/04/13/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
-      </h1>
-    
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2023-04-13
-        
-    </p>
-
-    
-
-    <!-- Content -->
-    <h2 id="结构体的定义和使用"><a href="#结构体的定义和使用" class="headerlink" title="结构体的定义和使用"></a>结构体的定义和使用</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><code>struct  Student</code><br><code>&#123;</code><br>    <code>string name;</code><br>    <code>int age;</code><br>    <code>int score;</code><br><code>&#125;;</code></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><code>struct Student s; s.name = &quot;张三&quot;; s.age = 18; s.score = 100;</code></p>
-<p><code>struct Student s = &#123; &quot;张三&quot;, 18, 100 &#125;;</code></p>
-<p><code>Student s = &#123; &quot;张三&quot;, 18, 100 &#125;; </code></p>
-<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2><p>将自定义的结构体放到数组中方便维护</p>
-<p><code>struct 结构体名 数组名[元素个数] = &#123; &#123;&#125;， &#123;&#125;，... &#123;&#125;&#125;;</code></p>
-<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><code>struct Student* p = &amp;s;</code></p>
-<p><code>Student* p = &amp;s;</code></p>
-<h3 id="通过指针访问"><a href="#通过指针访问" class="headerlink" title="通过指针访问"></a>通过指针访问</h3><p><code>cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; p-&gt;name &lt;&lt; endl;</code></p>
-<p><strong>姓名：张三</strong></p>
-<h2 id="结构体中const的使用"><a href="#结构体中const的使用" class="headerlink" title="结构体中const的使用"></a>结构体中const的使用</h2><p>传递方式：值传递，拷贝时会拷贝数据（尽量用地址传递）</p>
-
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-
-    <hr />
-
-    
-
-    
-
-
-
-</div>
-</div>
-
-
-
-
 
 
   </div>
