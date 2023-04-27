@@ -1,0 +1,198 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>函数 | HeatDeath</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon/favicon.ico">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+<link rel="stylesheet" href="/css/tagplugins.css">
+
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+    
+
+
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="HeatDeath" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="blog-header">
+   <a id="menu-nav-icon"><img src="/image/menu.png"/></a>
+   <div class="nav-container">
+     <nav id="main-nav">
+       
+         <a class="main-nav-link" href="/">Home</a>
+       
+         <a class="main-nav-link" href="/archives">Archives</a>
+       
+     </nav>
+   </div>
+   <!--
+   <div id="search-form-wrap">
+     <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+   </div>
+ -->
+    <h1 class="blog-title">HeatDeath</h1>
+    <p class="lead blog-description"></p>
+</div>
+
+  <div id='main-part'>
+      <div class="main">
+<div class="blog-post">
+    <!-- Title -->
+    <h1 class="blog-post-title">
+        <a href="/2023/04/27/函数/">
+            函数
+        </a>
+    </h1>
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2023-04-27
+        
+    </p>
+
+    
+
+    <!-- Content -->
+    <h1 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h1><p>语法：(函数创建时)</p>
+<p>​		返回值类型 函数名 (形参 &#x3D; 默认值){}</p>
+<p>效果：</p>
+<p>​		如果自己传入数据，就用自己的数据，如果没有，那么久用默认值</p>
+<p>注意事项：</p>
+<ul>
+<li>如果某个位置已经有了默认参数，那么从这个位置往后，全都要有默认参数</li>
+<li>如果函数的声明和函数的构造只有一个能有默认参数</li>
+</ul>
+<h1 id="函数占位参数"><a href="#函数占位参数" class="headerlink" title="函数占位参数"></a>函数占位参数</h1><p>语法：(函数创建时)</p>
+<p>​		返回值类型 函数名 (数据类型){}</p>
+<p>占位参数也可以有默认参数</p>
+<h1 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h1><p>作用：函数名相同，提高复用性</p>
+<p>条件：</p>
+<ul>
+<li>同一个作用于下</li>
+<li>函数名称相同</li>
+<li>函数参数类型不同、个数不同或者顺序不同</li>
+</ul>
+<p>注意</p>
+<ul>
+<li><p>函数的返回值不能作为重载的条件</p>
+</li>
+<li><p>当函数重载碰到默认参数，出现二义性，报错，尽量避免这种情况</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span>&amp; a)</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func(int&amp; a)调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; a)</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func(cosntint&amp; a)调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">func</span>(a);<span class="comment">//func(int&amp; a)调用</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">func</span>(<span class="number">10</span>);<span class="comment">//func(cosntint&amp; a)调用</span></span><br><span class="line"></span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> b = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">func</span>(b);<span class="comment">//func(cosntint &amp; a)调用</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="成员属性"><a href="#成员属性" class="headerlink" title="成员属性"></a>成员属性</h1><p>成员属性通常设置为私有：</p>
+<pre><code>1. 可以自己控制读写权限
+1. 对于写可以检测数据的有效性
+</code></pre>
+
+
+    <!-- Social share choices -->
+    
+  <div id="social-share">
+    <a data-url="http://example.com/2023/04/27/%E5%87%BD%E6%95%B0/" target="_blank" rel="noopener" href="https://plus.google.com/share?url=" class="googleplus"><img src="/image/googleplusicon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/27/%E5%87%BD%E6%95%B0/" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=" class="twitter"><img src="/image/twittericon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/27/%E5%87%BD%E6%95%B0/" target="_blank" rel="noopener" href="http://pinterest.com/pin/create/button/?url=" class="pinterest"><img src="/image/pinteresticon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/27/%E5%87%BD%E6%95%B0/" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook"><img src="/image/facebookicon.png" alt=""/></a>
+  </div>
+
+
+
+
+
+<!--
+
+
+https://www.facebook.com/sharer/sharer.php?u=http://example.com/2023/04/27/%E5%87%BD%E6%95%B0/
+http://example.com/2023/04/27/%25E5%2587%25BD%25E6%2595%25B0/
+-->
+
+
+
+    <hr />
+
+
+    <!-- Tags and Categories links -->
+    
+
+    
+
+
+    <!-- Comment using disqus -->
+    
+
+</div>
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <div id="footer">
+  <div id="footer-social">
+    
+    
+    
+    
+    
+    
+</div>
+
+  <p id="footer-info">
+    &copy; 2023 HeatDeath<br>
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -
+    主题 <a href="https://github.com/Suolawangzai/hexo-theme-nebula" target="_blank">nebula</a>
+  </p>
+
+  <div id="busuanzi">
+    <span id="busuanzi_container_site_pv">
+      &hearts;
+    总访问量: <span id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+  <!--
+  <div id="footer-info">
+    &copy; 2023 HeatDeath<br>
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  </div>
+-->
+</div>
+
+  <!-- After footer scripts -->
+  <!-- Disqus Comments -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+</body>
+
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<!--��̬��������-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+</html>
+

@@ -1,0 +1,182 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>结构体 | HeatDeath</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon/favicon.ico">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+<link rel="stylesheet" href="/css/tagplugins.css">
+
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+    
+
+
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="HeatDeath" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="blog-header">
+   <a id="menu-nav-icon"><img src="/image/menu.png"/></a>
+   <div class="nav-container">
+     <nav id="main-nav">
+       
+         <a class="main-nav-link" href="/">Home</a>
+       
+         <a class="main-nav-link" href="/archives">Archives</a>
+       
+     </nav>
+   </div>
+   <!--
+   <div id="search-form-wrap">
+     <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+   </div>
+ -->
+    <h1 class="blog-title">HeatDeath</h1>
+    <p class="lead blog-description"></p>
+</div>
+
+  <div id='main-part'>
+      <div class="main">
+<div class="blog-post">
+    <!-- Title -->
+    <h1 class="blog-post-title">
+        <a href="/2023/04/11/结构体/">
+            结构体
+        </a>
+    </h1>
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2023-04-11
+        
+    </p>
+
+    
+
+    <!-- Content -->
+    <h2 id="结构体的定义和使用"><a href="#结构体的定义和使用" class="headerlink" title="结构体的定义和使用"></a>结构体的定义和使用</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">`<span class="keyword">struct</span>  <span class="title class_">Student</span>`</span><br><span class="line">`&#123;`</span><br><span class="line">	`string name;`</span><br><span class="line">	`<span class="type">int</span> age;`</span><br><span class="line">	`<span class="type">int</span> score;`</span><br><span class="line">`&#125;;`</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span> s;</span><br><span class="line">s.name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">s.age = <span class="number">18</span>;</span><br><span class="line">s.score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span> s = &#123; <span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="number">100</span> &#125;;</span><br><span class="line">Student s = &#123; <span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="number">100</span> &#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2><p>将自定义的结构体放到数组中方便维护</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> 结构体名 数组名[元素个数] = &#123; &#123;&#125;， &#123;&#125;，... &#123;&#125;&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span>* p = &amp;s;</span><br><span class="line"></span><br><span class="line">Student* p = &amp;s;</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过指针访问"><a href="#通过指针访问" class="headerlink" title="通过指针访问"></a>通过指针访问</h3><p><code>cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; p-&gt;name &lt;&lt; endl;</code></p>
+<p><strong>姓名：张三</strong></p>
+<h2 id="结构体中const的使用"><a href="#结构体中const的使用" class="headerlink" title="结构体中const的使用"></a>结构体中const的使用</h2><p>传递方式：值传递，拷贝时会拷贝数据（尽量用地址传递），可以提高效率</p>
+
+
+    <!-- Social share choices -->
+    
+  <div id="social-share">
+    <a data-url="http://example.com/2023/04/11/%E7%BB%93%E6%9E%84%E4%BD%93/" target="_blank" rel="noopener" href="https://plus.google.com/share?url=" class="googleplus"><img src="/image/googleplusicon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/11/%E7%BB%93%E6%9E%84%E4%BD%93/" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=" class="twitter"><img src="/image/twittericon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/11/%E7%BB%93%E6%9E%84%E4%BD%93/" target="_blank" rel="noopener" href="http://pinterest.com/pin/create/button/?url=" class="pinterest"><img src="/image/pinteresticon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/11/%E7%BB%93%E6%9E%84%E4%BD%93/" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook"><img src="/image/facebookicon.png" alt=""/></a>
+  </div>
+
+
+
+
+
+<!--
+
+
+https://www.facebook.com/sharer/sharer.php?u=http://example.com/2023/04/11/%E7%BB%93%E6%9E%84%E4%BD%93/
+http://example.com/2023/04/11/%25E7%25BB%2593%25E6%259E%2584%25E4%25BD%2593/
+-->
+
+
+
+    <hr />
+
+
+    <!-- Tags and Categories links -->
+    
+
+    
+
+
+    <!-- Comment using disqus -->
+    
+
+</div>
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <div id="footer">
+  <div id="footer-social">
+    
+    
+    
+    
+    
+    
+</div>
+
+  <p id="footer-info">
+    &copy; 2023 HeatDeath<br>
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -
+    主题 <a href="https://github.com/Suolawangzai/hexo-theme-nebula" target="_blank">nebula</a>
+  </p>
+
+  <div id="busuanzi">
+    <span id="busuanzi_container_site_pv">
+      &hearts;
+    总访问量: <span id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+  <!--
+  <div id="footer-info">
+    &copy; 2023 HeatDeath<br>
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  </div>
+-->
+</div>
+
+  <!-- After footer scripts -->
+  <!-- Disqus Comments -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+</body>
+
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<!--��̬��������-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+</html>
+

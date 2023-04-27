@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>内存模型 | HeatDeath</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon/favicon.ico">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+<link rel="stylesheet" href="/css/tagplugins.css">
+
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+    
+
+
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="HeatDeath" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="blog-header">
+   <a id="menu-nav-icon"><img src="/image/menu.png"/></a>
+   <div class="nav-container">
+     <nav id="main-nav">
+       
+         <a class="main-nav-link" href="/">Home</a>
+       
+         <a class="main-nav-link" href="/archives">Archives</a>
+       
+     </nav>
+   </div>
+   <!--
+   <div id="search-form-wrap">
+     <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+   </div>
+ -->
+    <h1 class="blog-title">HeatDeath</h1>
+    <p class="lead blog-description"></p>
+</div>
+
+  <div id='main-part'>
+      <div class="main">
+<div class="blog-post">
+    <!-- Title -->
+    <h1 class="blog-post-title">
+        <a href="/2023/04/22/内存模型/">
+            内存模型
+        </a>
+    </h1>
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2023-04-22
+        
+    </p>
+
+    
+
+    <!-- Content -->
+    <h1 id="内存分区模型"><a href="#内存分区模型" class="headerlink" title="内存分区模型"></a>内存分区模型</h1><p>C++程序在执行时，将内存大方向划分为4个区域</p>
+<ul>
+<li><p>代码区:存放函数体的二进制代码]由操作系统进行管理的（运行前）</p>
+<ul>
+<li>存放CPU 执行的机器指令</li>
+<li>代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可</li>
+<li>代码区是只读的，使其只读的原因是防止程序意外地修改了它的指令</li>
+</ul>
+</li>
+<li><p>全局区: 存放全局变是和静态变量以及常量（运行前）</p>
+<ul>
+<li>静态变量和全局变量学放在此</li>
+<li>全局区还包含了常量区、字符串常量和其他常量也存放在此.</li>
+<li>该区域的数据在程序结束后由操作系统释放</li>
+<li>C++中在程序运行前分为全局区和代码区</li>
+<li>全局区中存放全局变量、静态变量、常量</li>
+<li>常量区中存放 const修饰的全局常量 和 字符串常量</li>
+</ul>
+</li>
+<li><p>栈区:由编译器自动分配释放,存放函数的参数值,局部变量等（运行后）</p>
+<ul>
+<li>由编译器自动分配释放,存放函数的参数值,局部变量等</li>
+<li>注意事项: 不要返回局部变量的地址，栈区开辟的数据由编译器自动释放</li>
+</ul>
+</li>
+<li><p>堆区:由程序员分配和释放,若程序员不释放,程序结束时由操作系统回收（运行后）</p>
+<ul>
+<li><p>由程序员分配释放,若程序员不释放,程序结束时由操作系统回收</p>
+</li>
+<li><p>在C++中主要利用new在堆区开辟内存</p>
+</li>
+<li><p>堆区开辟的数据，由程序员手动开辟，手动释放，释放利用操作符<code>delete</code></p>
+<p><code>delete 指针</code></p>
+<p><code>delete[] 指针</code></p>
+</li>
+</ul>
+</li>
+</ul>
+
+
+    <!-- Social share choices -->
+    
+  <div id="social-share">
+    <a data-url="http://example.com/2023/04/22/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener" href="https://plus.google.com/share?url=" class="googleplus"><img src="/image/googleplusicon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/22/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=" class="twitter"><img src="/image/twittericon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/22/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener" href="http://pinterest.com/pin/create/button/?url=" class="pinterest"><img src="/image/pinteresticon.png" alt=""/></a>
+    <a data-url="http://example.com/2023/04/22/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook"><img src="/image/facebookicon.png" alt=""/></a>
+  </div>
+
+
+
+
+
+<!--
+
+
+https://www.facebook.com/sharer/sharer.php?u=http://example.com/2023/04/22/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/
+http://example.com/2023/04/22/%25E5%2586%2585%25E5%25AD%2598%25E6%25A8%25A1%25E5%259E%258B/
+-->
+
+
+
+    <hr />
+
+
+    <!-- Tags and Categories links -->
+    
+
+    
+
+
+    <!-- Comment using disqus -->
+    
+
+</div>
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <div id="footer">
+  <div id="footer-social">
+    
+    
+    
+    
+    
+    
+</div>
+
+  <p id="footer-info">
+    &copy; 2023 HeatDeath<br>
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -
+    主题 <a href="https://github.com/Suolawangzai/hexo-theme-nebula" target="_blank">nebula</a>
+  </p>
+
+  <div id="busuanzi">
+    <span id="busuanzi_container_site_pv">
+      &hearts;
+    总访问量: <span id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+  <!--
+  <div id="footer-info">
+    &copy; 2023 HeatDeath<br>
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  </div>
+-->
+</div>
+
+  <!-- After footer scripts -->
+  <!-- Disqus Comments -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+</body>
+
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<!--��̬��������-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+</html>
+

@@ -57,6 +57,221 @@
     <!-- Title -->
     
       <h1 class="blog-post-title">
+        <a href="/2023/04/27/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">类和对象</a>
+      </h1>
+    
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2023-04-27
+        
+    </p>
+
+    
+
+    <!-- Content -->
+    <h1 id="类的创建"><a href="#类的创建" class="headerlink" title="类的创建"></a>类的创建</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设计一个园类，求周长</span></span><br><span class="line"><span class="type">const</span> <span class="type">double</span> PI = <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Circle</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//访问权限</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//属性</span></span><br><span class="line">	<span class="type">int</span> m_R;</span><br><span class="line">	<span class="comment">//行为</span></span><br><span class="line">	<span class="function"><span class="type">double</span> <span class="title">calculate</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">2</span> * PI * m_R;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//创建对象</span></span><br><span class="line">	<span class="comment">//实例化</span></span><br><span class="line">	Circle c1;</span><br><span class="line">	c1.m_R = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;圆的周长为：&quot;</span> &lt;&lt; c1.<span class="built_in">calculate</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="comment">//62.8</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">sutdent</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	string m_Name;</span><br><span class="line">	<span class="type">int</span> m_Num;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;姓名是：&quot;</span> &lt;&lt; m_Name &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;学号是：&quot;</span> &lt;&lt; m_Num &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//封装</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">setName</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		m_Name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">setNum</span><span class="params">(<span class="type">int</span> num)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		m_Num = num;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	sutdent s1;</span><br><span class="line"></span><br><span class="line">	s1.<span class="built_in">setName</span> (<span class="string">&quot;zsd&quot;</span>);</span><br><span class="line">	s1.<span class="built_in">setNum</span> (<span class="number">5</span>);</span><br><span class="line">	s1.<span class="built_in">f</span>();</span><br><span class="line">	<span class="comment">//姓名是：zsd</span></span><br><span class="line">	<span class="comment">//学号是：5</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="访问权限"><a href="#访问权限" class="headerlink" title="访问权限"></a>访问权限</h2><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">权限</th>
+<th align="center">类内</th>
+<th align="center">类外</th>
+<th align="center">子类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">public</td>
+<td align="center">公开的</td>
+<td align="center">类内可以访问</td>
+<td align="center">类外可以访问</td>
+<td align="center">子类可以访问</td>
+</tr>
+<tr>
+<td align="center">protected</td>
+<td align="center">保护的</td>
+<td align="center">类内可以访问</td>
+<td align="center">类外不可以访问</td>
+<td align="center">子类可以访问</td>
+</tr>
+<tr>
+<td align="center">private</td>
+<td align="center">私有的</td>
+<td align="center">类内可以访问</td>
+<td align="center">类外不可以访问</td>
+<td align="center">子类不可以访问</td>
+</tr>
+</tbody></table>
+<p>class默认为私有</p>
+<p>strcut默认为公开</p>
+<h2 id="成员属性私有化"><a href="#成员属性私有化" class="headerlink" title="成员属性私有化"></a>成员属性私有化</h2><p>1、可以自己控制读写权限</p>
+<p>2、对于写权限，可以检测数据的有效性</p>
+
+    <!-- Only display the Read More link if we are displaying an excerpt -->
+    
+
+    <hr />
+
+    
+
+    
+
+
+
+</div>
+</div>
+
+
+    <div class="main">
+<div class="blog-post">
+    <!-- Title -->
+    
+      <h1 class="blog-post-title">
+        <a href="/2023/04/27/%E5%87%BD%E6%95%B0/">函数</a>
+      </h1>
+    
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2023-04-27
+        
+    </p>
+
+    
+
+    <!-- Content -->
+    <h1 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h1><p>语法：(函数创建时)</p>
+<p>​		返回值类型 函数名 (形参 &#x3D; 默认值){}</p>
+<p>效果：</p>
+<p>​		如果自己传入数据，就用自己的数据，如果没有，那么久用默认值</p>
+<p>注意事项：</p>
+<ul>
+<li>如果某个位置已经有了默认参数，那么从这个位置往后，全都要有默认参数</li>
+<li>如果函数的声明和函数的构造只有一个能有默认参数</li>
+</ul>
+<h1 id="函数占位参数"><a href="#函数占位参数" class="headerlink" title="函数占位参数"></a>函数占位参数</h1><p>语法：(函数创建时)</p>
+<p>​		返回值类型 函数名 (数据类型){}</p>
+<p>占位参数也可以有默认参数</p>
+<h1 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h1><p>作用：函数名相同，提高复用性</p>
+<p>条件：</p>
+<ul>
+<li>同一个作用于下</li>
+<li>函数名称相同</li>
+<li>函数参数类型不同、个数不同或者顺序不同</li>
+</ul>
+<p>注意</p>
+<ul>
+<li><p>函数的返回值不能作为重载的条件</p>
+</li>
+<li><p>当函数重载碰到默认参数，出现二义性，报错，尽量避免这种情况</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span>&amp; a)</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func(int&amp; a)调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; a)</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func(cosntint&amp; a)调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">func</span>(a);<span class="comment">//func(int&amp; a)调用</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">func</span>(<span class="number">10</span>);<span class="comment">//func(cosntint&amp; a)调用</span></span><br><span class="line"></span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> b = <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">func</span>(b);<span class="comment">//func(cosntint &amp; a)调用</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="成员属性"><a href="#成员属性" class="headerlink" title="成员属性"></a>成员属性</h1><p>成员属性通常设置为私有：</p>
+<pre><code>1. 可以自己控制读写权限
+1. 对于写可以检测数据的有效性
+</code></pre>
+
+    <!-- Only display the Read More link if we are displaying an excerpt -->
+    
+
+    <hr />
+
+    
+
+    
+
+
+
+</div>
+</div>
+
+
+    <div class="main">
+<div class="blog-post">
+    <!-- Title -->
+    
+      <h1 class="blog-post-title">
+        <a href="/2023/04/22/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">内存模型</a>
+      </h1>
+    
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2023-04-22
+        
+    </p>
+
+    
+
+    <!-- Content -->
+    <h1 id="内存分区模型"><a href="#内存分区模型" class="headerlink" title="内存分区模型"></a>内存分区模型</h1><p>C++程序在执行时，将内存大方向划分为4个区域</p>
+<ul>
+<li><p>代码区:存放函数体的二进制代码]由操作系统进行管理的（运行前）</p>
+<ul>
+<li>存放CPU 执行的机器指令</li>
+<li>代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可</li>
+<li>代码区是只读的，使其只读的原因是防止程序意外地修改了它的指令</li>
+</ul>
+</li>
+<li><p>全局区: 存放全局变是和静态变量以及常量（运行前）</p>
+<ul>
+<li>静态变量和全局变量学放在此</li>
+<li>全局区还包含了常量区、字符串常量和其他常量也存放在此.</li>
+<li>该区域的数据在程序结束后由操作系统释放</li>
+<li>C++中在程序运行前分为全局区和代码区</li>
+<li>全局区中存放全局变量、静态变量、常量</li>
+<li>常量区中存放 const修饰的全局常量 和 字符串常量</li>
+</ul>
+</li>
+<li><p>栈区:由编译器自动分配释放,存放函数的参数值,局部变量等（运行后）</p>
+<ul>
+<li>由编译器自动分配释放,存放函数的参数值,局部变量等</li>
+<li>注意事项: 不要返回局部变量的地址，栈区开辟的数据由编译器自动释放</li>
+</ul>
+</li>
+<li><p>堆区:由程序员分配和释放,若程序员不释放,程序结束时由操作系统回收（运行后）</p>
+<ul>
+<li><p>由程序员分配释放,若程序员不释放,程序结束时由操作系统回收</p>
+</li>
+<li><p>在C++中主要利用new在堆区开辟内存</p>
+</li>
+<li><p>堆区开辟的数据，由程序员手动开辟，手动释放，释放利用操作符<code>delete</code></p>
+<p><code>delete 指针</code></p>
+<p><code>delete[] 指针</code></p>
+</li>
+</ul>
+</li>
+</ul>
+
+    <!-- Only display the Read More link if we are displaying an excerpt -->
+    
+
+    <hr />
+
+    
+
+    
+
+
+
+</div>
+</div>
+
+
+    <div class="main">
+<div class="blog-post">
+    <!-- Title -->
+    
+      <h1 class="blog-post-title">
         <a href="/2023/04/15/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">通讯录管理系统</a>
       </h1>
     
@@ -69,221 +284,53 @@
     
 
     <!-- Content -->
-    <h1 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h1><p><code>void showMenu() &#123;     cout &lt;&lt; &quot;*****************************&quot; &lt;&lt; endl;     cout &lt;&lt; &quot;*****	1、添加联系人	*****&quot; &lt;&lt; endl;     cout &lt;&lt; &quot;*****	2、显示联系人	*****&quot; &lt;&lt; endl;     cout &lt;&lt; &quot;*****	3、删除联系人	*****&quot; &lt;&lt; endl;     cout &lt;&lt; &quot;*****	4、查找联系人	*****&quot; &lt;&lt; endl;     cout &lt;&lt; &quot;*****	5、修改联系人	*****&quot; &lt;&lt; endl;     cout &lt;&lt; &quot;*****	6、清空联系人	*****&quot; &lt;&lt; endl;     cout &lt;&lt; &quot;*****	0、退出通讯录	*****&quot; &lt;&lt; endl;     cout &lt;&lt; &quot;*****************************&quot; &lt;&lt; endl; &#125;</code></p>
+    <h1 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">showMenu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****************************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****	1、添加联系人	*****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****	2、显示联系人	*****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****	3、删除联系人	*****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****	4、查找联系人	*****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****	5、修改联系人	*****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****	6、清空联系人	*****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****	0、退出通讯录	*****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****************************&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <hr>
 <p><code>showMenu();</code></p>
 <p>*****************************<br>*****   1、添加联系人   *****<br>*****   2、显示联系人   *****<br>*****   3、删除联系人   *****<br>*****   4、查找联系人   *****<br>*****   5、修改联系人   *****<br>*****   6、清空联系人   *****<br>*****   0、退出通讯录   *****</p>
 <p>*****************************</p>
-<h1 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h1><p><code>int select = 0;//创建用户选择输入的变量</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">	<span class="comment">//菜单调用</span></span><br><span class="line">	<span class="built_in">showMenu</span>();</span><br><span class="line"></span><br><span class="line">	cin &gt;&gt; select;</span><br><span class="line">	<span class="keyword">switch</span> (select) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:<span class="comment">//1、添加联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:<span class="comment">//2、显示联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:<span class="comment">//3、删除联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:<span class="comment">//4、查找联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:<span class="comment">//5、修改联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:<span class="comment">//6、清空联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">0</span>:<span class="comment">//0、退出通讯录</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;欢迎下次使用&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;`</span><br></pre></td></tr></table></figure>
+<h1 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> select = <span class="number">0</span>;<span class="comment">//创建用户选择输入的变量</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">	<span class="comment">//菜单调用</span></span><br><span class="line">	<span class="built_in">showMenu</span>();</span><br><span class="line"></span><br><span class="line">	cin &gt;&gt; select;</span><br><span class="line">	<span class="keyword">switch</span> (select) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:<span class="comment">//1、添加联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:<span class="comment">//2、显示联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:<span class="comment">//3、删除联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:<span class="comment">//4、查找联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:<span class="comment">//5、修改联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:<span class="comment">//6、清空联系人</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">0</span>:<span class="comment">//0、退出通讯录</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;欢迎下次使用&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>当输入非0数字时，会不断调用菜单</p>
-<h1 id="添加联系人"><a href="#添加联系人" class="headerlink" title="添加联系人"></a>添加联系人</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p><code>//设计联系人结构体</code><br><code>struct Person</code><br><code>&#123;</code><br>    <code>//姓名</code><br>    <code>string m_Name;</code><br>    <code>//性别</code><br>    <code>int m_Sex;</code><br>    <code>//年龄</code><br>    <code>int m_Age;</code><br>    <code>//电话</code><br>    <code>string m_Phone;</code><br>    <code>//住址</code><br>    <code>string m_Addr;</code><br><code>&#125;;</code></p>
-<p><code>//设计通讯录结构体</code><br><code>struct Addressbooks</code><br><code>&#123;</code><br>    <code>//联系人数组</code><br>    <code>struct Person personArray[Max];</code><br>    <code>//联系人个数</code><br>    <code>int m_Size;</code><br><code>&#125;;</code></p>
-<h2 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h2><p><code>void addPerson(Addressbooks *abs) &#123;     //判断是否为满     if (abs-&gt;m_Size == Max) &#123;         cout &lt;&lt; &quot;通讯录已满，无法添加！&quot; &lt;&lt; endl;         return;     &#125;     else &#123;         //添加联系人         //姓名         string name;         cout &lt;&lt; &quot;请输入姓名：&quot; &lt;&lt; endl;         cin &gt;&gt; name;         abs-&gt;personArray[abs-&gt;m_Size].m_Name = name;</code></p>
-<pre><code>    //性别
-    int sex = 0;
-    cout &lt;&lt; &quot;请输入性别：&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;1——男&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;2——女&quot; &lt;&lt; endl;
+<h1 id="添加联系人"><a href="#添加联系人" class="headerlink" title="添加联系人"></a>添加联系人</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设计联系人结构体</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//姓名</span></span><br><span class="line">	string m_Name;</span><br><span class="line">	<span class="comment">//性别</span></span><br><span class="line">	<span class="type">int</span> m_Sex;</span><br><span class="line">	<span class="comment">//年龄</span></span><br><span class="line">	<span class="type">int</span> m_Age;</span><br><span class="line">	<span class="comment">//电话</span></span><br><span class="line">	string m_Phone;</span><br><span class="line">	<span class="comment">//住址</span></span><br><span class="line">	string m_Addr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//设计通讯录结构体</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Addressbooks</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//联系人数组</span></span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">Person</span> personArray[Max];</span><br><span class="line">	<span class="comment">//联系人个数</span></span><br><span class="line">	<span class="type">int</span> m_Size;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-    while (true) &#123;
-        cin &gt;&gt; sex;
-        if (sex == 1 || sex == 2) &#123;
-            abs-&gt;personArray[abs-&gt;m_Size].m_Sex = sex;
-            break;
-        &#125;
-        else &#123;
-            cout &lt;&lt; &quot;您的输入有误，请重新输入！&quot; &lt;&lt; endl;
-        &#125;
-    &#125;
 
-    //年龄
-    int age;
-    cout &lt;&lt; &quot;请输入年龄：&quot; &lt;&lt; endl;
-    while (true) &#123;
-        cin &gt;&gt; age;
-        if (age &lt; 0 || age &gt; 100) &#123;
-            cout &lt;&lt; &quot;您的输入有误，请重新输入！&quot; &lt;&lt; endl;
-        &#125;
-        else &#123;
-            abs-&gt;personArray[abs-&gt;m_Size].m_Age = age;
-            break;
-        &#125;
-    &#125;
-    
-    //电话
-    cout &lt;&lt; &quot;请输入联系电话：&quot; &lt;&lt; endl;
-    string phone;
-    cin &gt;&gt; phone;
-    abs-&gt;personArray[abs-&gt;m_Size].m_Phone = phone;
 
-    //住址
-    cout &lt;&lt; &quot;请输入住址：&quot; &lt;&lt; endl;
-    string address;
-    cin &gt;&gt; address;
-    abs-&gt;personArray[abs-&gt;m_Size].m_Addr = address;
 
-    //更新人数
-    abs-&gt;m_Size++;
-    cout &lt;&lt; &quot;添加成功&quot; &lt;&lt; endl;
 
-    system(&quot;pause&quot;);
-    system(&quot;cls&quot;);//清屏
-&#125;
-</code></pre>
-<p><code>&#125;</code></p>
-<h1 id="显示联系人"><a href="#显示联系人" class="headerlink" title="显示联系人"></a>显示联系人</h1><p><code>void showPerson(Addressbooks * abs) &#123;</code><br>    <code>//判断通讯录是否为0</code><br>    <code>if (abs-&gt;m_Size == 0) &#123;</code><br>        <code>cout &lt;&lt; &quot;当前无联系人&quot; &lt;&lt; endl;</code><br>    <code>&#125;</code><br>    <code>else &#123;</code><br>        <code>for (int i = 0; i &lt; abs-&gt;m_Size;i++) &#123;</code><br>            <code>cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; abs-&gt;personArray[i].m_Name &lt;&lt; &quot;\t&quot;;</code><br>            <code>cout &lt;&lt; &quot;性别：&quot; &lt;&lt; (abs-&gt;personArray[i].m_Sex == 1 ? &quot;男&quot; : &quot;女&quot;) &lt;&lt; &quot;\t&quot;;</code><br>            <code>cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; abs-&gt;personArray[i].m_Age &lt;&lt; &quot;\t&quot;;</code><br>            <code>cout &lt;&lt; &quot;电话：&quot; &lt;&lt; abs-&gt;personArray[i].m_Phone &lt;&lt; &quot;\t&quot;;</code><br>            <code>cout &lt;&lt; &quot;住址：&quot; &lt;&lt; abs-&gt;personArray[i].m_Addr &lt;&lt; endl;</code><br>        <code>&#125;</code><br>    <code>&#125;</code></p>
-<pre><code>system(&quot;pause&quot;);
-system(&quot;cls&quot;);
-</code></pre>
-<p><code>&#125;</code></p>
-<h1 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h1><h2 id="检测联系人是否存在"><a href="#检测联系人是否存在" class="headerlink" title="检测联系人是否存在"></a>检测联系人是否存在</h2><p><code>int isExist(Addressbooks* abs, string name) &#123;     for (int i = 0; i &lt; abs-&gt;m_Size; i++)     &#123;         if (abs-&gt;personArray[i].m_Name == name)         &#123;             return i;         &#125;     &#125;     return -1; &#125;</code></p>
-<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><p>&#x2F;&#x2F;删除联系人<br>void deletePerson(Addressbooks* abs)<br>{<br>    cout &lt;&lt; “请输入您要删除的联系人” &lt;&lt; endl;</p>
-<pre><code>string name;
-cin &gt;&gt; name;
+<h2 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="type">void</span> <span class="title">addPerson</span><span class="params">(Addressbooks *abs)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//判断是否为满</span></span><br><span class="line">	<span class="keyword">if</span> (abs-&gt;m_Size == Max) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;通讯录已满，无法添加！&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">//添加联系人</span></span><br><span class="line">		<span class="comment">//姓名</span></span><br><span class="line">		string name;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入姓名：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		cin &gt;&gt; name;</span><br><span class="line">		abs-&gt;personArray[abs-&gt;m_Size].m_Name = name;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//性别</span></span><br><span class="line">	<span class="type">int</span> sex = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入性别：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;1——男&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;2——女&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">		cin &gt;&gt; sex;</span><br><span class="line">		<span class="keyword">if</span> (sex == <span class="number">1</span> || sex == <span class="number">2</span>) &#123;</span><br><span class="line">			abs-&gt;personArray[abs-&gt;m_Size].m_Sex = sex;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;您的输入有误，请重新输入！&quot;</span> &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//年龄</span></span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入年龄：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">		cin &gt;&gt; age;</span><br><span class="line">		<span class="keyword">if</span> (age &lt; <span class="number">0</span> || age &gt; <span class="number">100</span>) &#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;您的输入有误，请重新输入！&quot;</span> &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			abs-&gt;personArray[abs-&gt;m_Size].m_Age = age;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//电话</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入联系电话：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	string phone;</span><br><span class="line">	cin &gt;&gt; phone;</span><br><span class="line">	abs-&gt;personArray[abs-&gt;m_Size].m_Phone = phone;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//住址</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入住址：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	string address;</span><br><span class="line">	cin &gt;&gt; address;</span><br><span class="line">	abs-&gt;personArray[abs-&gt;m_Size].m_Addr = address;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//更新人数</span></span><br><span class="line">	abs-&gt;m_Size++;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;添加成功&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);<span class="comment">//清屏</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-int ret = isExist(abs, name);
 
-if (ret != -1)
-&#123;
-    for (int i = ret; i &lt; abs-&gt;m_Size; i++)
-    &#123;
-        abs-&gt;personArray[i] = abs-&gt;personArray[i + 1];
-    &#125;
-    abs-&gt;m_Size--;
-    cout &lt;&lt; &quot;删除成功&quot; &lt;&lt; endl;
-&#125;
-else
-&#123;
-    cout &lt;&lt; &quot;没有该联系人&quot; &lt;&lt; endl;
-&#125;
-system(&quot;pause&quot;);
-system(&quot;cls&quot;);
-</code></pre>
-<p>}</p>
-<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><p><code>void findPerson(Addressbooks* abs) &#123;     cout &lt;&lt; &quot;请输入您要查找的联系人&quot; &lt;&lt; endl;     string name;     cin &gt;&gt; name;</code></p>
-<pre><code> int ret = isExist(abs, name);
 
- if (ret != -1)
- &#123;
-     cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Name &lt;&lt; &quot;\t&quot;;
-     cout &lt;&lt; &quot;性别：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Sex &lt;&lt; &quot;\t&quot;;
-     cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Age &lt;&lt; &quot;\t&quot;;
-         cout &lt;&lt; &quot;电话：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Phone &lt;&lt; &quot;\t&quot;;
-         cout &lt;&lt; &quot;住址：&quot; &lt;&lt; abs-&gt;personArray[ret].m_Addr &lt;&lt; &quot;\t&quot;;
- &#125;
- else &#123;
-     cout &lt;&lt; &quot;没找到此人&quot; &lt;&lt; endl;
- &#125;
 
- system(&quot;pause&quot;);
- system(&quot;cls&quot;);
-</code></pre>
-<p><code>&#125;</code></p>
-<h1 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h1><p><code>void modifyPerson(Addressbooks* abs) &#123;     cout &lt;&lt; &quot;请输入您要修改的联系人&quot; &lt;&lt; endl;     string name;     cin &gt;&gt; name;</code></p>
-<pre><code>int ret = isExist(abs, name);
-if (ret != -1) &#123;
-    //姓名
-    string name;
-    cout &lt;&lt; &quot;请输入姓名&quot; &lt;&lt; endl;
-    cin &gt;&gt; name;
-    abs-&gt;personArray[ret].m_Name = name;
-    //性别
-    cout &lt;&lt; &quot;请输入性别：&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;1——男&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;2——女&quot; &lt;&lt; endl;
+<h1 id="显示联系人"><a href="#显示联系人" class="headerlink" title="显示联系人"></a>显示联系人</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">showPerson</span><span class="params">(Addressbooks * abs)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//判断通讯录是否为0</span></span><br><span class="line">	<span class="keyword">if</span> (abs-&gt;m_Size == <span class="number">0</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;当前无联系人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; abs-&gt;m_Size;i++) &#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;姓名：&quot;</span> &lt;&lt; abs-&gt;personArray[i].m_Name &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;性别：&quot;</span> &lt;&lt; (abs-&gt;personArray[i].m_Sex == <span class="number">1</span> ? <span class="string">&quot;男&quot;</span> : <span class="string">&quot;女&quot;</span>) &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;年龄：&quot;</span> &lt;&lt; abs-&gt;personArray[i].m_Age &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;电话：&quot;</span> &lt;&lt; abs-&gt;personArray[i].m_Phone &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;住址：&quot;</span> &lt;&lt; abs-&gt;personArray[i].m_Addr &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    int sex = 0;
-    while (true)
-    &#123;
-        cin &gt;&gt; sex;
-        if (sex == 1 || sex == 2)
-        &#123;
-            abs-&gt;personArray[ret].m_Sex = sex;
-            break;
-        &#125;
-        cout &lt;&lt; &quot;输入有误，请重新输入&quot; &lt;&lt; endl;
-    &#125;
-    //年龄
-    cout &lt;&lt; &quot;请输入年龄：&quot; &lt;&lt; endl;
-    int age = 0;
-    cin &gt;&gt; age;
-    abs-&gt;personArray[ret].m_Age = age;
-    //电话
-    cout &lt;&lt; &quot;请输入联系电话：&quot; &lt;&lt; endl;
-    string phone;
-    cin &gt;&gt; phone;
-    abs-&gt;personArray[ret].m_Phone = phone;
-    //住址
-    cout &lt;&lt; &quot;请输入联系住址：&quot; &lt;&lt; endl;
-    string addr;
-    cin &gt;&gt; addr;
-    abs-&gt;personArray[ret].m_Addr = addr;
 
-    cout &lt;&lt; &quot;修改成功&quot; &lt;&lt; endl;
+<h1 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h1><h2 id="检测联系人是否存在"><a href="#检测联系人是否存在" class="headerlink" title="检测联系人是否存在"></a>检测联系人是否存在</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">isExist</span><span class="params">(Addressbooks* abs, string name)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; abs-&gt;m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (abs-&gt;personArray[i].m_Name == name)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-&#125;
-else &#123;
-    cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
-&#125;
+<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除联系人</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">deletePerson</span><span class="params">(Addressbooks* abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入您要删除的联系人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	</span><br><span class="line">	string name;</span><br><span class="line">	cin &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> ret = <span class="built_in">isExist</span>(abs, name);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (ret != <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = ret; i &lt; abs-&gt;m_Size; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            abs-&gt;personArray[i] = abs-&gt;personArray[i + <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        abs-&gt;m_Size--;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;删除成功&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;没有该联系人&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-system(&quot;pause&quot;);
-system(&quot;cls&quot;);
-</code></pre>
-<p>}</p>
-<h1 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h1><p><code>void cleanPerson(Addressbooks* abs) &#123;     abs-&gt;m_Size = 0;     cout &lt;&lt; &quot;通讯录已清空&quot; &lt;&lt; endl;     system(&quot;pause&quot;);     system(&quot;cls&quot;); &#125;</code></p>
-<h1 id="最后的main"><a href="#最后的main" class="headerlink" title="最后的main"></a>最后的main</h1><p><code>int main() &#123;     //创建通讯录结构体变量     Addressbooks abs;     abs.m_Size = 0;</code></p>
-<pre><code>int select = 0;//创建用户选择输入的变量
 
-while (true) &#123;
-    //菜单调用
-    showMenu();
+<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">findPerson</span><span class="params">(Addressbooks* abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入您要查找的联系人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	string name;</span><br><span class="line">	cin &gt;&gt; name;`</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> ret = <span class="built_in">isExist</span>(abs, name);</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (ret != <span class="number">-1</span>)</span><br><span class="line">     &#123;</span><br><span class="line">         cout &lt;&lt; <span class="string">&quot;姓名：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Name &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">         cout &lt;&lt; <span class="string">&quot;性别：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Sex &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">         cout &lt;&lt; <span class="string">&quot;年龄：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Age &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">             cout &lt;&lt; <span class="string">&quot;电话：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Phone &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">             cout &lt;&lt; <span class="string">&quot;住址：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Addr &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">else</span> &#123;</span><br><span class="line">         cout &lt;&lt; <span class="string">&quot;没找到此人&quot;</span> &lt;&lt; endl;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">     <span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    cin &gt;&gt; select;
-    switch (select) &#123;
-    case 1://1、添加联系人
-        addPerson(&amp;abs);
-        break;
-    case 2://2、显示联系人
-        showPerson(&amp;abs);
-        break;
-    case 3://3、删除联系人
-        /*&#123;
-            cout &lt;&lt; &quot;请输入删除联系人的姓名：&quot; &lt;&lt; endl;
-            string name;
-            cin &gt;&gt; name;
-            if (isExist(&amp;abs, name) == -1)
-            &#123;
-                cout &lt;&lt; &quot;没有该联系人&quot; &lt;&lt; endl;
-            &#125;
-            else
-            &#123;
-                cout &lt;&lt; &quot;找到&quot; &lt;&lt; endl;
-            &#125;
-        &#125;*/
-        deletePerson(&amp;abs);
-        break;
-    case 4://4、查找联系人
-        findPerson(&amp;abs);
-        break;
-    case 5://5、修改联系人
-        modifyPerson(&amp;abs);
-        break;
-    case 6://6、清空联系人
-        cleanPerson(&amp;abs);
-        break;
-    case 0://0、退出通讯录
-        cout &lt;&lt; &quot;欢迎下次使用&quot; &lt;&lt; endl;
-        system(&quot;pause&quot;);
-        return 0;
-        break;
-    default:
-        break;
-    &#125;
-&#125;
-</code></pre>
-<p>}</p>
+
+
+
+<h1 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">modifyPerson</span><span class="params">(Addressbooks* abs)</span> </span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入您要修改的联系人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	string name;</span><br><span class="line">	cin &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> ret = <span class="built_in">isExist</span>(abs, name);</span><br><span class="line">    <span class="keyword">if</span> (ret != <span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="comment">//姓名</span></span><br><span class="line">        string name;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;请输入姓名&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cin &gt;&gt; name;</span><br><span class="line">        abs-&gt;personArray[ret].m_Name = name;</span><br><span class="line">        <span class="comment">//性别</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;请输入性别：&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;1——男&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;2——女&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> sex = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            cin &gt;&gt; sex;</span><br><span class="line">            <span class="keyword">if</span> (sex == <span class="number">1</span> || sex == <span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                abs-&gt;personArray[ret].m_Sex = sex;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;输入有误，请重新输入&quot;</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//年龄</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;请输入年龄：&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="type">int</span> age = <span class="number">0</span>;</span><br><span class="line">        cin &gt;&gt; age;</span><br><span class="line">        abs-&gt;personArray[ret].m_Age = age;</span><br><span class="line">        <span class="comment">//电话</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;请输入联系电话：&quot;</span> &lt;&lt; endl;</span><br><span class="line">        string phone;</span><br><span class="line">        cin &gt;&gt; phone;</span><br><span class="line">        abs-&gt;personArray[ret].m_Phone = phone;</span><br><span class="line">        <span class="comment">//住址</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;请输入联系住址：&quot;</span> &lt;&lt; endl;</span><br><span class="line">        string addr;</span><br><span class="line">        cin &gt;&gt; addr;</span><br><span class="line">        abs-&gt;personArray[ret].m_Addr = addr;</span><br><span class="line"></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;修改成功&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;查无此人&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">cleanPerson</span><span class="params">(Addressbooks* abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	abs-&gt;m_Size = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;通讯录已清空&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="最后的main"><a href="#最后的main" class="headerlink" title="最后的main"></a>最后的main</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//创建通讯录结构体变量</span></span><br><span class="line">	Addressbooks abs;</span><br><span class="line">	abs.m_Size = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"> 	<span class="type">int</span> select = <span class="number">0</span>;<span class="comment">//创建用户选择输入的变量</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">//菜单调用</span></span><br><span class="line">        <span class="built_in">showMenu</span>();</span><br><span class="line"></span><br><span class="line">        cin &gt;&gt; select;</span><br><span class="line">        <span class="keyword">switch</span> (select) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:<span class="comment">//1、添加联系人</span></span><br><span class="line">            <span class="built_in">addPerson</span>(&amp;abs);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:<span class="comment">//2、显示联系人</span></span><br><span class="line">            <span class="built_in">showPerson</span>(&amp;abs);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:<span class="comment">//3、删除联系人</span></span><br><span class="line">            <span class="comment">/*&#123;</span></span><br><span class="line"><span class="comment">                cout &lt;&lt; &quot;请输入删除联系人的姓名：&quot; &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">                string name;</span></span><br><span class="line"><span class="comment">                cin &gt;&gt; name;</span></span><br><span class="line"><span class="comment">                if (isExist(&amp;abs, name) == -1)</span></span><br><span class="line"><span class="comment">                &#123;</span></span><br><span class="line"><span class="comment">                    cout &lt;&lt; &quot;没有该联系人&quot; &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">                &#125;</span></span><br><span class="line"><span class="comment">                else</span></span><br><span class="line"><span class="comment">                &#123;</span></span><br><span class="line"><span class="comment">                    cout &lt;&lt; &quot;找到&quot; &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">                &#125;</span></span><br><span class="line"><span class="comment">            &#125;*/</span></span><br><span class="line">            <span class="built_in">deletePerson</span>(&amp;abs);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:<span class="comment">//4、查找联系人</span></span><br><span class="line">            <span class="built_in">findPerson</span>(&amp;abs);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:<span class="comment">//5、修改联系人</span></span><br><span class="line">            <span class="built_in">modifyPerson</span>(&amp;abs);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>:<span class="comment">//6、清空联系人</span></span><br><span class="line">            <span class="built_in">cleanPerson</span>(&amp;abs);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:<span class="comment">//0、退出通讯录</span></span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;欢迎下次使用&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     <!-- Only display the Read More link if we are displaying an excerpt -->
     
@@ -305,12 +352,63 @@ while (true) &#123;
     <!-- Title -->
     
       <h1 class="blog-post-title">
-        <a href="/2023/04/13/%E6%8C%87%E9%92%88/">指针</a>
+        <a href="/2023/04/11/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
       </h1>
     
     <!-- Date and Author -->
     <p class="blog-post-meta">
-        2023-04-13
+        2023-04-11
+        
+    </p>
+
+    
+
+    <!-- Content -->
+    <h2 id="结构体的定义和使用"><a href="#结构体的定义和使用" class="headerlink" title="结构体的定义和使用"></a>结构体的定义和使用</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">`<span class="keyword">struct</span>  <span class="title class_">Student</span>`</span><br><span class="line">`&#123;`</span><br><span class="line">	`string name;`</span><br><span class="line">	`<span class="type">int</span> age;`</span><br><span class="line">	`<span class="type">int</span> score;`</span><br><span class="line">`&#125;;`</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span> s;</span><br><span class="line">s.name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">s.age = <span class="number">18</span>;</span><br><span class="line">s.score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span> s = &#123; <span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="number">100</span> &#125;;</span><br><span class="line">Student s = &#123; <span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="number">100</span> &#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2><p>将自定义的结构体放到数组中方便维护</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> 结构体名 数组名[元素个数] = &#123; &#123;&#125;， &#123;&#125;，... &#123;&#125;&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span>* p = &amp;s;</span><br><span class="line"></span><br><span class="line">Student* p = &amp;s;</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过指针访问"><a href="#通过指针访问" class="headerlink" title="通过指针访问"></a>通过指针访问</h3><p><code>cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; p-&gt;name &lt;&lt; endl;</code></p>
+<p><strong>姓名：张三</strong></p>
+<h2 id="结构体中const的使用"><a href="#结构体中const的使用" class="headerlink" title="结构体中const的使用"></a>结构体中const的使用</h2><p>传递方式：值传递，拷贝时会拷贝数据（尽量用地址传递），可以提高效率</p>
+
+    <!-- Only display the Read More link if we are displaying an excerpt -->
+    
+
+    <hr />
+
+    
+
+    
+
+
+
+</div>
+</div>
+
+
+    <div class="main">
+<div class="blog-post">
+    <!-- Title -->
+    
+      <h1 class="blog-post-title">
+        <a href="/2023/04/11/%E6%8C%87%E9%92%88/">指针</a>
+      </h1>
+    
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2023-04-11
         
     </p>
 
@@ -319,85 +417,39 @@ while (true) &#123;
     <!-- Content -->
     <h2 id="解引用"><a href="#解引用" class="headerlink" title="解引用"></a>解引用</h2><p>可以通过解引用的方式来找到指针指向的内存</p>
 <p>指针前面加 * 代表解引用，找到指针指向的内存中的数据</p>
-<p><code>cout &lt;&lt; &quot;a的地址为：&quot; &lt;&lt; &amp;a &lt;&lt; endl; cout &lt;&lt; &quot;*p的值为：&quot; &lt;&lt; *p &lt;&lt; endl;</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;a的地址为：&quot;</span> &lt;&lt; &amp;a &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;*p的值为：&quot;</span> &lt;&lt; *p &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
 <p><strong>a的地址为：10</strong><br>*<strong>p的值为：10</strong></p>
 <h2 id="指针所占的内存空间"><a href="#指针所占的内存空间" class="headerlink" title="指针所占的内存空间"></a>指针所占的内存空间</h2><p>在32位操作系统下，占4个字节</p>
 <p>在64位操作系统下，占8个字节</p>
-<p><code>int a = 10;     int* p = &amp;a;</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;sizeof (int*) = &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(<span class="type">int</span>*) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;sizeof (int*) = &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(p) &lt;&lt; endl;`</span><br></pre></td></tr></table></figure>
-
-<p><em><em>sizeof (int</em>) &#x3D; 8<br>sizeof (int</em>) &#x3D; 8**</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>* p = &amp;a;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;sizeof (int*) = &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(<span class="type">int</span>*) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;sizeof (int*) = &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(p) &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p><em><em>sizeof (int</em>) &#x3D; 8</em>*<br><em><em>sizeof (int</em>) &#x3D; 8</em>*</p>
 <h2 id="空指针"><a href="#空指针" class="headerlink" title="空指针"></a>空指针</h2><p>空指针用于给指针变量初始化</p>
 <p>空指针不可以访问</p>
 <p>空指针指向内存为0的空间</p>
 <p>0~255之间的内存编号是系统占用，不可以访问</p>
-<p><code>int* p = NULL; cout &lt;&lt; *p &lt;&lt; endl;</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* p = <span class="literal">NULL</span>;</span><br><span class="line">cout &lt;&lt; *p &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
 <p><strong>(进程 25944)已退出，代码为 -1073741819。</strong></p>
 <h2 id="野指针"><a href="#野指针" class="headerlink" title="野指针"></a>野指针</h2><p>指针变量指向非法的内存空间</p>
-<p><code>int* p = (int*)0x1100; cout &lt;&lt; *p &lt;&lt; endl;</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* p = (<span class="type">int</span>*)<span class="number">0x1100</span>;</span><br><span class="line">cout &lt;&lt; *p &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
 <p><strong>(进程 3160)已退出，代码为 -1073741819。</strong></p>
 <h2 id="const-修饰指针"><a href="#const-修饰指针" class="headerlink" title="const 修饰指针"></a>const 修饰指针</h2><p>1.const修饰指针 ——常量指针</p>
 <p>​	指针的指向可以修改，但是指针的值不可以改</p>
-<p>​	<code>int a = 10;</code></p>
-<p>​	<code>int b = 10;</code></p>
-<p>​	<code>const int* p = &amp;a;</code></p>
-<p>​	<code>p = &amp;b;</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* p = &amp;a;</span><br><span class="line"></span><br><span class="line">p = &amp;b;</span><br></pre></td></tr></table></figure>
+
 <p>2.const修饰常量 ——指针常量</p>
 <p>​	指针的指向不可以修改，但是指针的值可以改</p>
-<p>​	<code>int a = 10;</code></p>
-<p>​	<code>int b = 10;</code></p>
-<p>​	<code>int* const p = &amp;a;</code></p>
-<p>​	<code>p = 20;</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> p = &amp;a;</span><br><span class="line"></span><br><span class="line">p = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
 <p>3.const即修饰指针，又修饰常量</p>
 <p>​	指针的指向和指针指向的值都不能改</p>
-<p>​	<code>int a = 10;</code></p>
-<p>​	<code>int b = 10;</code></p>
-<p>​	<code>const int* const p = &amp;a;</code></p>
-<p>​	<code>p = 20;</code></p>
-
-    <!-- Only display the Read More link if we are displaying an excerpt -->
-    
-
-    <hr />
-
-    
-
-    
+<p>​	&#96;&#96;&#96;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> b = <span class="number">10</span>;`</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p = &amp;a;`</span><br><span class="line"></span><br><span class="line">p = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 
 
-
-</div>
-</div>
-
-
-    <div class="main">
-<div class="blog-post">
-    <!-- Title -->
-    
-      <h1 class="blog-post-title">
-        <a href="/2023/04/13/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
-      </h1>
-    
-    <!-- Date and Author -->
-    <p class="blog-post-meta">
-        2023-04-13
-        
-    </p>
-
-    
-
-    <!-- Content -->
-    <h2 id="结构体的定义和使用"><a href="#结构体的定义和使用" class="headerlink" title="结构体的定义和使用"></a>结构体的定义和使用</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><code>struct  Student</code><br><code>&#123;</code><br>    <code>string name;</code><br>    <code>int age;</code><br>    <code>int score;</code><br><code>&#125;;</code></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><code>struct Student s; s.name = &quot;张三&quot;; s.age = 18; s.score = 100;</code></p>
-<p><code>struct Student s = &#123; &quot;张三&quot;, 18, 100 &#125;;</code></p>
-<p><code>Student s = &#123; &quot;张三&quot;, 18, 100 &#125;; </code></p>
-<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2><p>将自定义的结构体放到数组中方便维护</p>
-<p><code>struct 结构体名 数组名[元素个数] = &#123; &#123;&#125;， &#123;&#125;，... &#123;&#125;&#125;;</code></p>
-<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><code>struct Student* p = &amp;s;</code></p>
-<p><code>Student* p = &amp;s;</code></p>
-<h3 id="通过指针访问"><a href="#通过指针访问" class="headerlink" title="通过指针访问"></a>通过指针访问</h3><p><code>cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; p-&gt;name &lt;&lt; endl;</code></p>
-<p><strong>姓名：张三</strong></p>
-<h2 id="结构体中const的使用"><a href="#结构体中const的使用" class="headerlink" title="结构体中const的使用"></a>结构体中const的使用</h2><p>传递方式：值传递，拷贝时会拷贝数据（尽量用地址传递）</p>
+<p>​	&#96;&#96;&#96;</p>
 
     <!-- Only display the Read More link if we are displaying an excerpt -->
     
